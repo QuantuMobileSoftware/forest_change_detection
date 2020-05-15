@@ -17,10 +17,11 @@ All dependencies are given in requirements.txt
 Main setup configuration:
 * python 3.6
 * pytorch==1.4.0
+* torchvision==0.5.0
 * [catalyst](https://github.com/catalyst-team/catalyst)==19.05
-* [segmentation_models](https://github.com/catalyst-team/catalyst)==0.1.0
+* [segmentation-models-pytorch](https://github.com/qubvel/segmentation_models.pytorch)==0.1.0
 
-Tested with Ubuntu + Nvidia GTX1060 with Cuda==10.2. 
+Tested with Ubuntu + Nvidia GTX1080ti with Cuda==10.1 and Nvidia GTX1060 with Cuda==10.2. 
 CPU mode also should work, but not tested.
 
 ## Dataset
