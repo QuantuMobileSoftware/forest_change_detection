@@ -4,7 +4,7 @@
 ## Description
 This is a source code repository for DEEP LEARNING FOR REGULAR CHANGE DETECTION IN UKRAINIAN FOREST ECOSYSTEM WITH SENTINEL-2 (Kostiantyn Isaienkov, Mykhailo Yushchuk, Vladyslav Khramtsov, Oleg Seliverstov), 2020.
 
-* Paper ([arXiv](https://arxiv.org/herewillbeourpaper), [Journal](https://arxiv.org/herewillbeourpaper))
+* Paper ([IEEE JSTARS Journal](https://ieeexplore.ieee.org/document/9241044))
 * [Data](https://drive.google.com/drive/folders/1GJwDQ7SqASyPlusjbYWHLbrpNg_wAtuP?usp=sharing)
 * [Deforestation monitoring system](http://bit.ly/clearcutq)
 
@@ -30,9 +30,7 @@ You can download our datasets directly from Google drive for the baseline and ti
 The data include *.geojson polygons:
 * [baseline](https://drive.google.com/drive/folders/1GJwDQ7SqASyPlusjbYWHLbrpNg_wAtuP?usp=sharing): 2318 polygons, **36UYA** and **36UXA**, **2016-2019** years;
 * [time-dependent](https://drive.google.com/drive/folders/1GJwDQ7SqASyPlusjbYWHLbrpNg_wAtuP?usp=sharing): **36UYA** (two sets of separated annotations, 278 and 123 polygons -- for spring and summer seasons respectively, **2019** year) and **36UXA** (1404 polygons, **2017-2018** years).
-The files contain the following columns: `tileID` (ID of a tile, which was annotated), `img_date` (the date, at which the tile was observed), and `geometry` (polygons of deforestation regions). 
-
-Also, we provide the set of images and masks prepared for training segmentation models as the [Kaggle dataset](https://kaggledataset).
+The files contain the following columns: `tileID` (ID of a tile, which was annotated), `img_date` (the date, at which the tile was observed), and `geometry` (polygons of deforestation regions).
 
 ## Training
 ### Reproduce results
@@ -41,9 +39,17 @@ To reproduce the results, presented in our paper, run the pipeline (download dat
 To train the models with the new data, you have to create train/valid/test (*.csv) files with specified location of images and masks, and make a minor changes in `Dataset` classes (for more information about location of these classes, see README files in `baseline` and `time-dependent` folders).
 
 ## Citation
-If you use our code and/or dataset for your research, please cite our [paper](https://herewillbeourpaper):
+If you use our code and/or dataset for your research, please cite our [paper](https://ieeexplore.ieee.org/document/9241044):
 
-K. Isaienkov, M. Yushchuk, V. Khramtsov, O. Seliverstov, Deep learning for regular change detection in Ukrainian forest ecosystem with Sentinel-2, 2020
-
-## Questions
-If you have questions after reading README, please email to [k.isaienkov@quantumobile.com](mailto:k.isaienkov@quantumobile.com).
+```
+@ARTICLE{Isaienkov2021,
+  author={K. {Isaienkov} and M. {Yushchuk} and V. {Khramtsov} and O. {Seliverstov}},
+  journal={IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing},
+  title={Deep Learning for Regular Change Detection in Ukrainian Forest Ecosystem With Sentinel-2},
+  year={2021},
+  volume={14},
+  number={},
+  pages={364-376},
+  doi={10.1109/JSTARS.2020.3034186}
+}
+```
