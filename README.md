@@ -7,6 +7,7 @@ This is a source code repository for DEEP LEARNING FOR REGULAR CHANGE DETECTION 
 * Paper ([IEEE JSTARS Journal](https://ieeexplore.ieee.org/document/9241044))
 * [Data](https://drive.google.com/drive/folders/1GJwDQ7SqASyPlusjbYWHLbrpNg_wAtuP?usp=sharing)
 * [Deforestation monitoring system](http://bit.ly/clearcutq)
+* [Weight of the best model, UNet-Diff](https://drive.google.com/file/d/1rbJf9lPLScT4h-X3e0CAsOqMqZfA6KNI/view?usp=sharing)
 
 ## Repository structure info
  * `baseline` - scripts for deforestation masks predictions with baseline models
