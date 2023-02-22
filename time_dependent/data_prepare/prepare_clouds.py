@@ -1,7 +1,7 @@
 import os
 import sys
 import cv2
-import imageio
+import tifffile
 import argparse
 import rasterio
 import numpy as np
@@ -48,7 +48,7 @@ def detect_clouds(merged_tif_path, save_file):
                              interpolation = cv2.INTER_CUBIC)
     
     print('save cloud.')
-    imageio.imwrite(save_file, cloud_probs)
+    tifffile.imwrite(save_file, cloud_probs)
     
 
 def parse_args():
