@@ -1,3 +1,34 @@
+# Unet-diff deforestation model inference
+
+### Build image
+
+For building image locally you <b>need</b> to place [model](https://drive.google.com/file/d/1rbJf9lPLScT4h-X3e0CAsOqMqZfA6KNI/view?usp=sharing) into  
+`models/unet-diff.pth`
+
+And also download `S2A_OPER_GIP_TILPAR_MPC__20151209T095117_V20150622T000000_21000101T000000_B00.kml` file and place it `into data/landcovers/S2A_OPER_GIP_TILPAR_MPC__20151209T095117_V20150622T000000_21000101T000000_B00.kml`
+
+and then
+
+`docker build -t deforestation .`
+
+
+### Docker run command
+```
+docker run \
+    --runtime nvidia \
+    -e "AOI=POLYGON ((-85.299088 40.339368, -85.332047 40.241477, -85.134979 40.229427, -85.157639 40.34146, -85.299088 40.339368))" \
+    -e "START_DATE=2020-05-01" \
+    -e "END_DATE=2020-06-30" \
+    -e "SENTINEL2_GOOGLE_API_KEY=/input/sentinel2_google_api_key.json" \
+    -e "SENTINEL2_CACHE=/input/SENTINEL2_CACHE" \
+    -e "OUTPUT_FOLDER=/output" \
+    -v path_to_SENTINEL2_CACHE:/input/SENTINEL2_CACHE \
+    -v path_to_sentinel2_google_api_key.json:/input/sentinel2_google_api_key.json \
+    -v path_to_/output:/output \
+    deforestation
+```
+
+
 
 # Forest Change Detection
 
