@@ -9,7 +9,7 @@ And also download `S2A_OPER_GIP_TILPAR_MPC__20151209T095117_V20150622T000000_210
 
 and then
 
-`docker build -t deforestation .`
+`docker build -t quantumobile/deforestation .`
 
 
 ### Docker run command
