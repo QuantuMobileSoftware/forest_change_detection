@@ -25,9 +25,17 @@ docker run \
     -v path_to_SENTINEL2_CACHE:/input/SENTINEL2_CACHE \
     -v path_to_sentinel2_google_api_key.json:/input/sentinel2_google_api_key.json \
     -v path_to_/output:/output \
-    deforestation
+    quantumobile/deforestation
 ```
 
+Push to repository 
+```
+docker push quantumobile/deforestation
+```
+Pull image from repository
+```
+docker pull quantumobile/deforestation
+```
 
 
 # Forest Change Detection
