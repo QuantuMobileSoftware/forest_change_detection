@@ -1,7 +1,7 @@
 import os
 import sys
 import cv2
-import imageio
+import tifffile
 import argparse
 import rasterio
 import numpy as np
@@ -30,26 +30,33 @@ def to_tiff(img_file, output_type='Float32'):
 def merge(save_path, *images):
     os.system(f'gdal_merge.py -ps 40 40 -v -separate -o {save_path} {".tif ".join(images)+".tif"}')
 
-def detect_clouds(merged_tif_path, save_file):
+
+def detect_clouds(merged_tif_path, save_file, scale = 1):
     print('================================')
     print('Cloud detection.')
     cloud_detector = S2PixelCloudDetector()
-
-    img = rasterio.open(merged_tif_path).read()
+    
+    with rasterio.open(merged_tif_path) as src:
+        img = src.read()
+        meta = src.meta
     img = reshape_as_image(img)
     img = np.expand_dims(img,axis=0)/10000
-    print('predict.')
+    print('predict\t.')
     cloud_probs = cloud_detector.get_cloud_probability_maps(img)
-    width = int(img.shape[2] * 4)
-    height = int(img.shape[1] * 4)
+    width = int(img.shape[2] * scale)
+    height = int(img.shape[1] * scale)
     print('resize.')
     cloud_probs = cloud_probs.reshape((img.shape[1],img.shape[2]))
     cloud_probs = cv2.resize(cloud_probs, (width, height), 
                              interpolation = cv2.INTER_CUBIC)
     
     print('save cloud.')
-    imageio.imwrite(save_file, cloud_probs)
-    
+    meta['count'] = 1
+    meta['height'], meta['width'] = height, width
+    meta['dtype'] = cloud_probs.dtype
+    with rasterio.open(save_file, 'w', **meta) as dst:
+        dst.write(cloud_probs[None,:,:])
+
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Script for predicting masks.')
