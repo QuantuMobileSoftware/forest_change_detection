@@ -15,6 +15,6 @@ google-auth-oauthlib
 s2cloudless
 catalyst==22.2.1 
 segmentation-models-pytorch==0.2.1 
-torch==1.7.1 
+torch==1.13.1 
 torchvision==0.8.2 
 
