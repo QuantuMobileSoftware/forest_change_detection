@@ -1,7 +1,7 @@
 git+https://github.com/QuantuMobileSoftware/sentinel2tools.git@bca7ff06c72411a4ada3886131f1b030cbd94e0b
 geojson==2.5.0 
 rasterio==1.1.8
-Shapely==1.7.1 
+Shapely==1.8.1 
 pyproj==3.0.0.post1 
 requests==2.28.0 
 geopandas==0.8.1
