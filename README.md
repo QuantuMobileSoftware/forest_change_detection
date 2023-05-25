@@ -7,7 +7,7 @@ For building image locally you <b>need</b> to place [model](https://drive.google
 
 And also download `S2A_OPER_GIP_TILPAR_MPC__20151209T095117_V20150622T000000_21000101T000000_B00.kml`([link](https://sentinel.esa.int/documents/247904/1955685/S2A_OPER_GIP_TILPAR_MPC__20151209T095117_V20150622T000000_21000101T000000_B00.kml)) file and place it into `data/landcovers/S2A_OPER_GIP_TILPAR_MPC__20151209T095117_V20150622T000000_21000101T000000_B00.kml`
 
-then run `git clone https://github.com/QuantuMobileSoftware/sip_landcover.git --recursive`
+then run `git submodule update --init --recursive
 
 and finally
 
