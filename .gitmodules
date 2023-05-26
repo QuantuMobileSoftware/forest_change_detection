@@ -1,0 +1,3 @@
+[submodule "sip_landcover"]
+	path = sip_landcover
+	url = https://github.com/QuantuMobileSoftware/sip_landcover.git
