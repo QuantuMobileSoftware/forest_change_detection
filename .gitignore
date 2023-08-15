@@ -1,0 +1,4 @@
+data/
+models/
+.devcontainer/
+__pycache__
